@@ -18,6 +18,7 @@
 (def input (s/split-lines (slurp input-file)))
 
 (defn solution []
+  (println "day 4...")
   (->>  (map #(s/split % #" ") input)
         (map #(apply distinct? %))
         (filter true?)

@@ -38,6 +38,7 @@
   (/ (- n 1) 2))
 
 (defn solution [] 
+  (println "day 3...")
   (let [length (side-length input)
         axes (steps-to-one length)
         steps (steps-to-center length)]

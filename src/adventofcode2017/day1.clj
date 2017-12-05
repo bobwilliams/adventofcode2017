@@ -54,5 +54,6 @@
                     (count-em 1))
         part2 (->>  (partition (+ 1 (/ (count input) 2)) 1 input)
                     (count-em 2))]
+    (println "day 1...")
     (println part1)
     (println part2)))
