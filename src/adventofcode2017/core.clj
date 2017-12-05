@@ -6,8 +6,8 @@
             [adventofcode2017.day4 :as day4]))
 
 (defn -main [& args]
-  ; (day1/solution)
-  ; (day2/solution)
-  ; (day3/solution)
+  (day1/solution)
+  (day2/solution)
+  (day3/solution)
   (day4/solution)
   (println "done!"))
