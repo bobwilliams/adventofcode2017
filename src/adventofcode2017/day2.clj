@@ -39,7 +39,7 @@
 
 (ns adventofcode2017.day2
     (:gen-class)
-    (:require [clojure.math.combinatorics :as combo]))
+    (:require [clojure.math.combinatorics :as c]))
 
 
 (def input [[4347  3350  196 162 233 4932  4419  3485  4509  4287  4433  4033  207 3682  2193  4223]
@@ -61,12 +61,12 @@
 
 (defn part1 []
     (let [max-vals (map #(apply max %) input) 
-            min-vals (map #(apply min %) input)
-            diffs (map #(- %1 %2) max-vals min-vals)]
+          min-vals (map #(apply min %) input)
+          diffs (map #(- %1 %2) max-vals min-vals)]
         (println (reduce + diffs))))
 
 (defn get-vals [c]
-  (->> (combo/combinations (sort > c) 2)
+  (->> (c/combinations (sort > c) 2)
        (filter #(= 0 (apply mod %)))
        (flatten)
        (apply /)))
