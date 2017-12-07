@@ -48,21 +48,21 @@
 
 (def input 325489)
 
-(defn exp [x n]
+(defn- exp [x n]
   (reduce * (repeat n x)))
 
-(defn side-length [n]
+(defn- side-length [n]
   (let [side (Math/ceil (Math/sqrt n))]
     (if (= (mod side 2) 0) (+ side 1) side)))
 
-(defn steps-to-one [n]
+(defn- steps-to-one [n]
   (for [i (range 4)]
     (- (exp n 2) (* (- n 1) i) (Math/floor (/ n 2)))))
 
-(defn steps-to-center [n]
+(defn- steps-to-center [n]
   (/ (- n 1) 2))
 
-(defn part1 []
+(defn- part1 []
   (let [length (side-length input)
         axes (steps-to-one length)
         steps (steps-to-center length)]
@@ -73,7 +73,7 @@
           (println))))
 
 ; https://oeis.org/A141481
-(defn part2 []
+(defn- part2 []
   (println "330785"))
 
 (defn solution [] 

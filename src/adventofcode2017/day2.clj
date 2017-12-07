@@ -59,19 +59,19 @@
             [401 151 309 961 124 1027  1084  389 1150  166 1057  137 932 669 590 188]
             [784 232 363 316 336 666 711 430 192 867 628 57  222 575 622 234]])
 
-(defn part1 []
+(defn- part1 []
     (let [max-vals (map #(apply max %) input) 
           min-vals (map #(apply min %) input)
           diffs (map #(- %1 %2) max-vals min-vals)]
         (println (reduce + diffs))))
 
-(defn get-vals [c]
+(defn- get-vals [c]
   (->> (c/combinations (sort > c) 2)
        (filter #(= 0 (apply mod %)))
        (flatten)
        (apply /)))
 
-(defn part2[] 
+(defn- part2[] 
     (println (reduce + (map get-vals input))))
 
 (defn solution []

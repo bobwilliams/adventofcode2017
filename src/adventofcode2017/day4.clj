@@ -36,14 +36,14 @@
         (s/split-lines)
         (map #(s/split % #" "))))
 
-(defn count-distinct [d]
+(defn- count-distinct [d]
   (->>  (filter #(apply distinct? %) d)
         (count)))
 
-(defn part1 []
+(defn- part1 []
   (println (count-distinct input)))
 
-(defn part2 []
+(defn- part2 []
   (->>  (map #(map sort %) input)
         (count-distinct)
         (println)))
