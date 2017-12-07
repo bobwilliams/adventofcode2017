@@ -32,7 +32,7 @@
   (:require [clojure.string :as s]))
 
 (def input 
-  (->>  (slurp "src/adventofcode2017/day4_input.txt") 
+  (->>  (slurp "resources/day4_input.txt") 
         (s/split-lines)
         (map #(s/split % #" "))))
 
