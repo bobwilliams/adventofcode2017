@@ -41,9 +41,9 @@
          steps 0]
     (if (or (>= position (count instructions)) (< position 0))
         steps
-        (let [insn (instructions position)]
-          (recur (update instructions position (if (and b (>= insn 3)) dec inc))
-                 (+ position insn)
+        (let [instruction (instructions position)]
+          (recur (update instructions position (if (and b (>= instruction 3)) dec inc))
+                 (+ position instruction)
                  (inc steps))))))
 
 (defn- part1 []
