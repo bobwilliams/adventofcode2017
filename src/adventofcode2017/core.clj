@@ -6,10 +6,8 @@
             [adventofcode2017.day4 :as day4]
             [adventofcode2017.day5 :as day5]))
 
+(def days [day1/solution day2/solution day3/solution day4/solution day5/solution])
+
 (defn -main [& args]
-  (day1/solution)
-  (day2/solution)
-  (day3/solution)
-  (day4/solution)
-  (day5/solution)
+  (dorun (map #(apply % nil) days))
   (println "done!"))
